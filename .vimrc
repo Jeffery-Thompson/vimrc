@@ -81,6 +81,8 @@ set nu
 
 " commands for NERDTree to start automatically
 autocmd vimenter * NERDTree
+"command to quit NERDTree if it is last thing in buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 
 " help make python code look nice
 let python_highlight_all=1
