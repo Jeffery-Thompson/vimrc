@@ -17,10 +17,12 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'scrooloose/nerdtree'
-Plugin 'jnurmine/Zenburn'
+"Plugin 'jnurmine/Zenburn'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Lokaltog/powerline casuse problems on lab/mesabi - vim crashes
+" 	when python3 added :/
+"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'nvie/vim-flake8'
 
 " ...
@@ -48,8 +50,8 @@ au BufNewFile,BufRead *.py,*.ipynb,*.sh :
 	\ set shiftwidth=4 |
 	\ set textwidth=79 |
 	\ set expandtab |
-	\set autoindent |
-	\set fileformat=unix 
+	\ set autoindent |
+	\ set fileformat=unix 
 " Flag unnecessary whitespace
 " highlight BadWhitespace ctermbg=red guibg=darkred
 " au BufRead,BufNewFile *.py,*.pyw,*.ipynb,*.c,*.h, match BadWhitespace /\s\+$/
