@@ -1,30 +1,22 @@
 set nocompatible              " required
-filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
-Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'scrooloose/nerdtree'
-"Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-" Lokaltog/powerline casuse problems on lab/mesabi - vim crashes
-" 	when python3 added :/
-"Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'nvie/vim-flake8'
+" now using vim-plug for plugins
 
+Plug 'tmhedberg/SimpylFold'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'preservim/nerdtree'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'powerline/powerline'
+Plug 'nvie/vim-flake8'
 " ...
 
 " set splitbelow
@@ -50,8 +42,8 @@ au BufNewFile,BufRead *.py,*.ipynb,*.sh :
 	\ set shiftwidth=4 |
 	\ set textwidth=79 |
 	\ set expandtab |
-	\ set autoindent |
-	\ set fileformat=unix 
+	\set autoindent |
+	\set fileformat=unix 
 " Flag unnecessary whitespace
 " highlight BadWhitespace ctermbg=red guibg=darkred
 " au BufRead,BufNewFile *.py,*.pyw,*.ipynb,*.c,*.h, match BadWhitespace /\s\+$/
@@ -91,5 +83,5 @@ let python_highlight_all=1
 syntax on
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
